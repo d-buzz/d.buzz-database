@@ -1,18 +1,27 @@
 {
-  "name": "dds-backend",
+  "name": "dbuzz-database",
   "version": "1.0.0",
-  "description": "Express API Structure",
+  "description": "DBuzz Decentralized Database API Controller",
   "main": "index.js",
   "scripts": {
     "init": "node ./init",
     "serve": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-buzz/d.buzz-database.git"
+  },
   "author": "aaashir",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d-buzz/d.buzz-database/issues"
+  },
+  "homepage": "https://github.com/d-buzz/d.buzz-database/#readme",
   "dependencies": {
     "@fleekhq/fleek-storage-js": "^1.0.20",
     "axios": "^0.24.0",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1"
