@@ -1,0 +1,20 @@
+{
+  "name": "dds-backend",
+  "version": "1.0.0",
+  "description": "Express API Structure",
+  "main": "index.js",
+  "scripts": {
+    "init": "node ./init",
+    "serve": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aaashir",
+  "license": "ISC",
+  "dependencies": {
+    "@fleekhq/fleek-storage-js": "^1.0.20",
+    "axios": "^0.24.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
+}
