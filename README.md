@@ -6,7 +6,7 @@ DBuzz Decentralized Database API Controller (Backend)
 ## Installation ⚙
 ```bash
 > git clone https://github.com/d-buzz/d.buzz-database.git
-> npm run init (initialize .env file and the manually add credentials)
+> npm run init (initialize .env file and then manually add credentials)
 > npm install
 > npm run serve
 ```
