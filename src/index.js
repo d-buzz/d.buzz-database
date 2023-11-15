@@ -5,7 +5,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
   
 app.use(cors(
-  { origin: ['http://localhost:3000', 'http://d.buzz', 'http://next.d.buzz'] }
+  { origin: [ 'http://localhost:3000', 'http://d.buzz', 'http://next.d.buzz', 'http://localhost:2020' ] }
 ))
 
 app.use(bodyParser.json())
