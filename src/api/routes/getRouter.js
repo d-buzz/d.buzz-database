@@ -41,12 +41,14 @@ getRouter.get('/', function (req, res) {
 
 getRouter.get('/getLeaderboardEngagement', async function (req, res) {
 	const mssql = require("mssql")
-  const {sort, date_type, limit} = req.body
+  const {sort, date_type, limit} = req.query
   let date_filter = ''
   if(date_type === 'all_time'){
     date_filter = ''
   }else if(date_type === 'weekly'){
     date_filter = " AND DATEPART(WK, c.created) = DATEPART(WK, GETDATE()) AND DATEPART(YEAR, c.created) = DATEPART(YEAR, GETDATE())"
+  }else if(date_type === 'monthly'){
+    date_filter = "AND DATEPART(MONTH, c.created) = DATEPART(MONTH, GETDATE()) AND DATEPART(YEAR, c.created) = DATEPART(YEAR, GETDATE())"
   }else{
     date_filter =  " AND CONVERT(DATE, c.created) = CONVERT(DATE, GETDATE())"
   }
@@ -71,12 +73,14 @@ getRouter.get('/getLeaderboardEngagement', async function (req, res) {
 
 getRouter.get('/getLeaderboardCurator', async function (req, res) {
 	const mssql = require("mssql")
-  const {sort, date_type, limit} = req.body
+  const {sort, date_type, limit} = req.query
   let date_filter = ''
   if(date_type === 'all_time'){
     date_filter = ''
   }else if(date_type === 'weekly'){
     date_filter = " AND DATEPART(WK, c.created) = DATEPART(WK, GETDATE()) AND DATEPART(YEAR, c.created) = DATEPART(YEAR, GETDATE())"
+  }else if(date_type === 'monthly'){
+    date_filter = "AND DATEPART(MONTH, c.created) = DATEPART(MONTH, GETDATE()) AND DATEPART(YEAR, c.created) = DATEPART(YEAR, GETDATE())"
   }else{
     date_filter =  " AND CONVERT(DATE, c.created) = CONVERT(DATE, GETDATE())"
   }
@@ -101,7 +105,7 @@ getRouter.get('/getLeaderboardCurator', async function (req, res) {
 
 getRouter.get('/getLeaderboardAuthor', async function (req, res) {
 	const mssql = require("mssql")
-  const {sort, limit} = req.body
+  const {sort, limit} = req.query
   let sort_by = ' ORDER BY score '
 	let limit_result = 10;
 	if(limit) limit_result = +limit
@@ -123,7 +127,7 @@ getRouter.get('/getLeaderboardAuthor', async function (req, res) {
 
 getRouter.get('/getLeaderboardEarlyAdopters', async function (req, res) {
 	const mssql = require("mssql")
-  const {sort, limit} = req.body
+  const {sort, limit} = req.query
   let sort_by = ' ORDER BY score '
 	let limit_result = 10;
 	if(limit) limit_result = +limit
