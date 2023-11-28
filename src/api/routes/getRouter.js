@@ -1,23 +1,11 @@
-require('dotenv').config({path:'../../../.env'})
 const { Router } =  require('express')
 const get = require('../controllers/get')
 
 const getRouter = Router()
 
-const hivesql_config = {
-	user: process.env.HIVESQL_USER,
-	password: process.env.HIVESQL_PASSWORD,
-	server: process.env.HIVESQL_SERVER, 
-	database: process.env.HIVESQL_DATABASE,
-	options: {
-	  enableArithAbort: true,
-	  encrypt: true,
-	  trustServerCertificate: true,
-	},
-}
+require('dotenv').config({path:'../../../.env'})
 
 getRouter.get('/', function (req, res) {
-
 	const { auth } = req.headers
 	const username = req.query.username
 
@@ -41,6 +29,23 @@ getRouter.get('/', function (req, res) {
 })
 
 getRouter.get('/getLeaderboardEngagement', async function (req, res) {
+const HIVESQL_USER = process.env.HIVESQL_USER
+const HIVESQL_PASSWORD = process.env.HIVESQL_PASSWORD
+const HIVESQL_SERVER = process.env.HIVESQL_SERVER
+const HIVESQL_DATABASE = process.env.HIVESQL_DATABASE
+
+const hivesql_config = {
+        user: HIVESQL_USER,
+        password: HIVESQL_PASSWORD,
+        server: HIVESQL_SERVER,
+        database: HIVESQL_DATABASE,
+        options: {
+          enableArithAbort: true,
+          encrypt: true,
+          trustServerCertificate: true,
+        },
+}
+
 	const mssql = require("mssql")
   const {sort, date_type, limit} = req.query
   let date_filter = ''
@@ -73,6 +78,23 @@ getRouter.get('/getLeaderboardEngagement', async function (req, res) {
 })
 
 getRouter.get('/getLeaderboardCurator', async function (req, res) {
+const HIVESQL_USER = process.env.HIVESQL_USER
+const HIVESQL_PASSWORD = process.env.HIVESQL_PASSWORD
+const HIVESQL_SERVER = process.env.HIVESQL_SERVER
+const HIVESQL_DATABASE = process.env.HIVESQL_DATABASE
+
+const hivesql_config = {
+        user: HIVESQL_USER,
+        password: HIVESQL_PASSWORD,
+        server: HIVESQL_SERVER,
+        database: HIVESQL_DATABASE,
+        options: {
+          enableArithAbort: true,
+          encrypt: true,
+          trustServerCertificate: true,
+        },
+}
+
 	const mssql = require("mssql")
   const {sort, date_type, limit} = req.query
   let date_filter = ''
@@ -105,6 +127,22 @@ getRouter.get('/getLeaderboardCurator', async function (req, res) {
 })
 
 getRouter.get('/getLeaderboardAuthor', async function (req, res) {
+const HIVESQL_USER = process.env.HIVESQL_USER
+const HIVESQL_PASSWORD = process.env.HIVESQL_PASSWORD
+const HIVESQL_SERVER = process.env.HIVESQL_SERVER
+const HIVESQL_DATABASE = process.env.HIVESQL_DATABASE
+
+const hivesql_config = {
+        user: HIVESQL_USER,
+        password: HIVESQL_PASSWORD,
+        server: HIVESQL_SERVER,
+        database: HIVESQL_DATABASE,
+        options: {
+          enableArithAbort: true,
+          encrypt: true,
+          trustServerCertificate: true,
+        },
+}
 	const mssql = require("mssql")
   const {sort, limit} = req.query
   let sort_by = ' ORDER BY score '
@@ -127,6 +165,22 @@ getRouter.get('/getLeaderboardAuthor', async function (req, res) {
 })
 
 getRouter.get('/getLeaderboardEarlyAdopters', async function (req, res) {
+const HIVESQL_USER = process.env.HIVESQL_USER
+const HIVESQL_PASSWORD = process.env.HIVESQL_PASSWORD
+const HIVESQL_SERVER = process.env.HIVESQL_SERVER
+const HIVESQL_DATABASE = process.env.HIVESQL_DATABASE
+
+const hivesql_config = {
+        user: HIVESQL_USER,
+        password: HIVESQL_PASSWORD,
+        server: HIVESQL_SERVER,
+        database: HIVESQL_DATABASE,
+        options: {
+          enableArithAbort: true,
+          encrypt: true,
+          trustServerCertificate: true,
+        },
+}
 	const mssql = require("mssql")
   const {sort, limit} = req.query
   let sort_by = ' ORDER BY score '
