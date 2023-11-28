@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '../.env'  })
+require('dotenv').config({ path: '../../../.env' })
 const { default: axios } = require('axios')
 
 const get = async(user) => {
