@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({ path: '../../../.env'  })
 const fleekStorage = require('@fleekhq/fleek-storage-js')
 
 const apiKey = process.env.API_KEY
