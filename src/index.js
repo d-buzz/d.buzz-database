@@ -3,6 +3,7 @@ const api = require('./api')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser')
+require('dotenv').config({ path: '../.env'  })
   
 app.use(cors(
   { origin: [ 'http://localhost:3000', 'http://d.buzz', 'http://next.d.buzz', 'http://localhost:2020' ] }
@@ -11,7 +12,6 @@ app.use(cors(
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true, limit: 10000000}))
 
-require('dotenv').config()
 const port = process.env.APP_PORT
 
 app.get('/', (req, res) => {
