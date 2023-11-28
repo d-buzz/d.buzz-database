@@ -1,3 +1,4 @@
+require('dotenv').config({path:'../../../.env'})
 const { Router } =  require('express')
 const get = require('../controllers/get')
 
